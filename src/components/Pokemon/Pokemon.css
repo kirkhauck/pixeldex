@@ -1,5 +1,14 @@
 figure {
   margin: 1%;
+  border: 0.2em solid #cdcdcd;
+  border-radius: 10px;
+  background-color: #e7e7e7;
+  padding: 1em;
+}
+
+figure:hover {
+  cursor: pointer;
+  background-color: #cdcdcd;
 }
 
 img {

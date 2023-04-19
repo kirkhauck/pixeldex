@@ -1,3 +1,33 @@
 form {
   margin: 2% auto;
+  display: flex;
+}
+
+input {
+  height: 1.5em;
+  width: auto;
+  border: none;
+  border-radius: 0;
+  font-family: 'Sofia Sans Semi Condensed', sans-serif;
+  font-size: 1em;
+}
+
+button {
+  cursor: pointer;
+  height: 1.5em;
+  width: auto;
+  border: none;
+  box-shadow: none;
+  font-family: 'Sofia Sans Semi Condensed', sans-serif;
+  font-size: 1em;
+  background-color: #400C07;
+  color: #F2F2F2;
+}
+
+button:hover {
+  background-color: #200603;
+}
+
+button:active {
+  box-shadow: 0 1px rgba(0, 0, 0, 0.2);
 }

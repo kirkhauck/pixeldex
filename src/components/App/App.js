@@ -8,8 +8,8 @@ const App = () => {
   return (
     <>
       <Header />
-      {/* <HomeView /> */}
-      <SpriteView />
+      <HomeView />
+      {/* <SpriteView /> */}
     </>
   );
 }
