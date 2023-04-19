@@ -1,0 +1,11 @@
+header {
+  display: flex;
+  align-items: center;
+}
+
+.pokeball-logo {
+  margin: 0 auto;
+  height: 4em;
+  width: 4em;
+  justify-self: center;
+}
