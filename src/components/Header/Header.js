@@ -7,10 +7,13 @@ const Header = () => {
   return (
     <header>
       <div className='logo-container'>
-        <img className='title-logo' src={titleLogo} alt='pixeldex title logo' />
+        <div className='title-container'>
+          <img className='title-logo' src={titleLogo} alt='pixeldex title logo' />
+          <p className='subtitle'>Unleash the pixels, catch the nostalgia!</p>
+        </div>
         <img className='pokeball-logo' src={pokeballLogo} alt='pixelated pokeball logo' />
       </div>
-        <p className='subtitle'>Unleash the pixels, catch the nostalgia!</p>
+      <button className='home-button'>HOME</button>
     </header>
   );
 };

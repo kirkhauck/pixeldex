@@ -11,7 +11,7 @@ header {
 
 .logo-container {
   display: flex;
-  width: calc(50% + 30px);
+  width: calc(50% + 40px);
   justify-content: space-between;
   align-items: center;
 }
@@ -20,6 +20,7 @@ header {
   height: auto;
   width: 40%;
   margin: 1em;
+  margin-bottom: 0;
 }
 
 .title-logo:hover {
@@ -27,13 +28,31 @@ header {
 }
 
 .pokeball-logo {
-  height: 60px;
-  width: 60px;
+  height: 80px;
+  width: 80px;
 }
 
 .subtitle {
   align-self: flex-end;
-  margin-right: 1rem;
+  margin-left: 1.4rem;
   margin-bottom: 1rem;
   font-size: 0.8em;
+}
+
+.home-button {
+  margin-right: 5%;
+  padding: 0 1.5em;
+  align-self: center;
+  border-radius: 5px;
+  background-color: #F2F2F2;
+  font-size: 24px;
+}
+
+.home-button:hover {
+  cursor: pointer;
+  background-color: #e5e5e5;
+}
+
+.home-button:active {
+  box-shadow: inset 1px 1px 1px 1px #9e9e9e;
 }
