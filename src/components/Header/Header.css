@@ -3,6 +3,8 @@ header {
   top: 0;
   left: 0;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
   color: #F2F2F2;
   background-color: #262626;
 }
@@ -14,12 +16,20 @@ header {
   align-items: center;
 }
 
-.main-logo {
-  margin: 0;
-  margin-left: 2%;
+.title-logo {
+  height: auto;
+  width: 40%;
+  margin: 1em;
 }
 
 .pokeball-logo {
   height: 60px;
   width: 60px;
+}
+
+.subtitle {
+  align-self: flex-end;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.8em;
 }
