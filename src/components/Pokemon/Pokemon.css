@@ -6,6 +6,11 @@ figure {
   padding: 1em;
 }
 
+figure:hover {
+  cursor: pointer;
+  background-color: #cdcdcd;
+}
+
 img {
   width: 100%;
 }
