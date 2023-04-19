@@ -6,7 +6,7 @@ import Pokemon from '../Pokemon/Pokemon';
 import { frontSprites } from '../../assets/mock-sprites';
 
 const PokemonContainer = () => {
-  const pokemonIcons = frontSprites.map(icon => <Pokemon frontSprite={icon} />)
+  const pokemonIcons = frontSprites.map(icon => <Pokemon frontSprite={icon} />);
 
   return (
     <section className='pokemon-container'>
