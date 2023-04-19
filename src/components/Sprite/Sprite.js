@@ -1,10 +1,10 @@
 import React from 'react';
 import './Sprite.css';
 
-const Sprite = () => {
+const Sprite = ({ sprite }) => {
   return (
-    <div>
-      
+    <div className='sprite'>
+      <img src={sprite} />
     </div>
   );
 }
