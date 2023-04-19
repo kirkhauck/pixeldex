@@ -22,6 +22,10 @@ header {
   margin: 1em;
 }
 
+.title-logo:hover {
+  cursor: pointer;
+}
+
 .pokeball-logo {
   height: 60px;
   width: 60px;

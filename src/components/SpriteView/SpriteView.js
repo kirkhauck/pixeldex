@@ -5,7 +5,7 @@ import SpritesContainer from '../SpritesContainer/SpritesContainer';
 const SpriteView = () => {
   return (
     <main>
-      <h2>Pokemon</h2>
+      <h1>Pokemon</h1>
       <SpritesContainer />
     </main>
   );
