@@ -5,6 +5,7 @@ header {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   color: #F2F2F2;
   background-color: #262626;
 }
@@ -39,10 +40,12 @@ header {
   font-size: 0.8em;
 }
 
-.home-button {
+.home-button-link {
   margin-right: 5%;
+}
+
+.home-button {
   padding: 0 1.5em;
-  align-self: center;
   border-radius: 5px;
   background-color: #F2F2F2;
   font-size: 24px;
