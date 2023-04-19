@@ -3,9 +3,10 @@ import './SearchBar.css';
 
 const SearchBar = () => {
   return (
-    <div>
-      
-    </div>
+    <form>
+      <input type='text' />
+      <button>SEARCH</button>
+    </form>
   );
 }
 

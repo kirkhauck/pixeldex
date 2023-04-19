@@ -1,0 +1,24 @@
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.logo-container {
+  display: flex;
+  width: 50%;
+  width: calc(50% + 60px);
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-logo {
+  margin: 0;
+  margin-left: 2%;
+}
+
+.pokeball-logo {
+  height: 60px;
+  width: 60px;
+}
