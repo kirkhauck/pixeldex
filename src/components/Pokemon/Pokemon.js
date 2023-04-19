@@ -3,10 +3,12 @@ import './Pokemon.css';
 
 const Pokemon = ({ frontSprite }) => {
   return (
-    <div>
+    <figure>
       <img src={frontSprite} />
-      <p>#1 | Pokemon</p>
-    </div>
+      <figcaption>
+        <p>#0001 | Pokemon</p>
+      </figcaption>
+    </figure>
   );
 }
 

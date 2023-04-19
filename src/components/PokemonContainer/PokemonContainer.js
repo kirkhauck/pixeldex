@@ -9,7 +9,7 @@ const PokemonContainer = () => {
   const pokemonIcons = frontSprites.map(icon => <Pokemon frontSprite={icon} />)
 
   return (
-    <section>
+    <section className='pokemon-container'>
       {pokemonIcons}
     </section>
   );
