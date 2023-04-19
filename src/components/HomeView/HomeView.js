@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
+import './HomeView.css';
 
-const App = () => {
+const HomeView = () => {
   return (
     <div>
       
@@ -9,4 +9,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default HomeView;
