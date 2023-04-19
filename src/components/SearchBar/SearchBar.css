@@ -12,7 +12,7 @@ input {
   font-size: 1em;
 }
 
-button {
+.search-button {
   cursor: pointer;
   height: 1.5em;
   width: auto;
@@ -24,10 +24,10 @@ button {
   color: #F2F2F2;
 }
 
-button:hover {
+.search-button:hover {
   background-color: #200603;
 }
 
-button:active {
+.search-button:active {
   box-shadow: 0 1px rgba(0, 0, 0, 0.2);
 }
