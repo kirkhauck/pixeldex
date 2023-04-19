@@ -1,7 +1,10 @@
 .pokemon-container {
-  width: 100%;
+  width: auto;
+  margin: 2%;
   padding: 5%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  border-radius: 10px;
+  background-color: #F2F2F2;
 }

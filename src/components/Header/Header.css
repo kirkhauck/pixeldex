@@ -3,6 +3,8 @@ header {
   top: 0;
   left: 0;
   width: 100%;
+  color: #F2F2F2;
+  background-color: #262626;
 }
 
 .logo-container {
