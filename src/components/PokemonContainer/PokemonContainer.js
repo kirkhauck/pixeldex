@@ -7,7 +7,7 @@ import Pokemon from '../Pokemon/Pokemon';
 // Temp placeholders for styling
 import { frontSprites } from '../../assets/mock-sprites';
 
-const PokemonContainer = () => {
+const PokemonContainer = ({ searchTerm }) => {
   const [pokeList, setPokeList] = useState([]);
   const [pokemon, setPokemon] = useState([])
   const [error, setError] = useState('')
@@ -32,6 +32,29 @@ const PokemonContainer = () => {
 
     setPokemon(pokemon);
   }, [pokeList]);
+
+  useEffect(() => {
+    let foundPokemon = null;
+    let pokemonIndex = -1
+    searchTerm = searchTerm.toLowerCase();
+
+    if (searchTerm !== '') {
+      [foundPokemon, pokemonIndex] = pokeList.reduce((acc, pokemon, i) => {
+        if (pokemon.name == searchTerm) {
+          acc = [pokemon, i];
+        }
+        return acc;
+      }, [null, -1]);
+    }
+
+    if (foundPokemon) {
+      const pokemonName = foundPokemon.name;
+      const dexNum = pokemonIndex + 1;
+      const pokemon = <Pokemon key={pokemonIndex} dexNum={dexNum} name={pokemonName} />;
+
+      setPokemon(pokemon);
+    }
+  }, [searchTerm]);
 
   return (
     error ? <ErrorMessage /> :
