@@ -22,10 +22,11 @@ describe('Visit Home Page', () => {
     .contains('button', 'HOME');
   });
 
-  it('should have a from with a text input and search button', () => {
+  it('should have a from with an empty text input and search button', () => {
     cy.get('form')
       .get('input')
-      .should('have.attr', 'type', 'text');
+      .should('have.attr', 'type', 'text')
+      .should('have.value', '');
 
     cy.get('form')
       .get('button')
