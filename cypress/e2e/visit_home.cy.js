@@ -32,4 +32,13 @@ describe('Visit Home Page', () => {
       .get('button')
       .contains('SEARCH');
   });
+
+  it('should have 20 pokemon components with numbers, names, and images', () => {
+    cy.get('.pokemon-container')
+      .children().should('have.length', 20)
+
+    cy.get('.pokemon-container')
+      .children().first()
+      .contains('a').should('have.attr', 'href', '/bulbasaur')
+  });
 });
