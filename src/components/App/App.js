@@ -5,14 +5,8 @@ import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import Header from '../Header/Header';
 import HomeView from '../HomeView/HomeView';
 import SpriteView from '../SpriteView/SpriteView';
-import fetchPokemon from '../../utils/apiCalls';
 
 const App = () => {
-  useEffect(() => {
-    fetchPokemon()
-      .then(data => console.log(data))
-  }, [])
-
   return (
     <>
       <Header/>
