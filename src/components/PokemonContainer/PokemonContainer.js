@@ -8,28 +8,28 @@ import { frontSprites } from '../../assets/mock-sprites';
 
 const PokemonContainer = () => {
   const [pokeList, setPokeList] = useState([]);
-  const [pokemonComponents, setPokemonComponents] = useState([])
+  const [pokemon, setPokemon] = useState([])
 
   useEffect(() => {
     fetchPokemon()
     .then(data => {
       setPokeList([...data.results]);
-      return data.results;
     })
-    .then(newPokemon => {
-      const selectedPokemonComponents = newPokemon.map((pokemon, i) => {
-        return (
-          <Pokemon key={i} dexNum={i + 1} name={pokemon.name} />
-        )
-      });
-
-      setPokemonComponents(selectedPokemonComponents)
-    });
   }, []);
+
+  useEffect(() => {
+    const pokemon = pokeList.length > 0 && pokeList.map((pokemon, i) => {
+      return (
+        <Pokemon key={i} dexNum={i + 1} name={pokemon.name} />
+      )
+    });
+
+    setPokemon(pokemon);
+  }, [pokeList]);
 
   return (
     <section className='pokemon-container'>
-      {pokemonComponents}
+      {pokemon}
     </section>
   );
 }
