@@ -10,6 +10,7 @@ import { frontSprites } from '../../assets/mock-sprites';
 const PokemonContainer = ({ searchTerm }) => {
   const [pokeList, setPokeList] = useState([]);
   const [pokemon, setPokemon] = useState([])
+  const [noMatchMessage, setNoMatchMessage] = useState('')
   const [error, setError] = useState('')
 
   useEffect(() => {
@@ -34,13 +35,13 @@ const PokemonContainer = ({ searchTerm }) => {
   }, [pokeList]);
 
   useEffect(() => {
-    let foundPokemon = null;
-    let pokemonIndex = -1
-    searchTerm = searchTerm.toLowerCase();
+    let foundPokemon;
+    let pokemonIndex;
 
+    setNoMatchMessage('')
     if (searchTerm !== '') {
       [foundPokemon, pokemonIndex] = pokeList.reduce((acc, pokemon, i) => {
-        if (pokemon.name == searchTerm) {
+        if (pokemon.name === searchTerm.toLowerCase()) {
           acc = [pokemon, i];
         }
         return acc;
@@ -50,18 +51,23 @@ const PokemonContainer = ({ searchTerm }) => {
     if (foundPokemon) {
       const pokemonName = foundPokemon.name;
       const dexNum = pokemonIndex + 1;
-      const pokemon = <Pokemon key={pokemonIndex} dexNum={dexNum} name={pokemonName} />;
+      const pokemon = <Pokemon dexNum={dexNum} name={pokemonName} />;
 
       setPokemon(pokemon);
+    } else if (foundPokemon === null) {
+      setNoMatchMessage(`${searchTerm.toUpperCase()} fled! (No Pokemon matched your search.)`)
     }
   }, [searchTerm]);
 
   return (
     error ? <ErrorMessage /> :
     (
-      <section className='pokemon-container'>
-        {pokemon}
-      </section>
+      <>
+        {noMatchMessage !== '' && <p>{noMatchMessage}</p>}
+        <section className='pokemon-container'>
+          {pokemon}
+        </section>
+      </>
     )
   );
 }
