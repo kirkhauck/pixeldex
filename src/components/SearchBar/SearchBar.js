@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import './SearchBar.css';
 
-const SearchBar = () => {
-  const [pokemonName, setPokemonName] = useState('')
+const SearchBar = ({ addSearchTerm }) => {
+  const [pokemonName, setPokemonName] = useState('');
+
+  const handleClick = event => {
+    event.preventDefault();
+    addSearchTerm(pokemonName);
+  }
 
   return (
     <form>
@@ -12,7 +17,13 @@ const SearchBar = () => {
         value={pokemonName}
         onChange={event => setPokemonName(event.target.value)}
       />
-      <button className='search-button'>SEARCH</button>
+      <button
+        name='search button'
+        className='search-button'
+        onClick={event => handleClick(event)}
+      >
+        SEARCH
+      </button>
     </form>
   );
 }
