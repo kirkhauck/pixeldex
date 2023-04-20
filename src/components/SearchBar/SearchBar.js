@@ -1,11 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './SearchBar.css';
 
-const SearchBar = () => {
+const SearchBar = ({ addSearchTerm }) => {
+  const [pokemonName, setPokemonName] = useState('');
+  const [requiredMessage, setRequiredMessage] = useState('')
+
+  const handleClick = event => {
+    event.preventDefault();
+    if (!pokemonName) {
+      setRequiredMessage('Please enter a Pokemon\'s name. It\'s super effective!');
+      return;
+    }
+    addSearchTerm(pokemonName);
+  }
+
+  const handleChange = event => {
+    setPokemonName(event.target.value);
+    setRequiredMessage('');
+  }
+
   return (
     <form>
-      <input type='text' />
-      <button className='search-button'>SEARCH</button>
+      <div>
+        <input
+          type='text'
+          name='pokemonName'
+          value={pokemonName}
+          aria-required="true"
+          onChange={handleChange}
+          />
+        <button
+          name='search button'
+          className='search-button'
+          onClick={event => handleClick(event)}
+          >
+          SEARCH
+        </button>
+      </div>
+      {requiredMessage && <p>{requiredMessage}</p>}
     </form>
   );
 }
