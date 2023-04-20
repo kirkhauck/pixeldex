@@ -1,10 +1,10 @@
 import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import Header from '../Header/Header';
 import HomeView from '../HomeView/HomeView';
 import SpriteView from '../SpriteView/SpriteView';
-import { Route, Routes } from 'react-router-dom';
 
 const App = () => {
   return (
