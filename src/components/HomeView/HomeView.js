@@ -13,7 +13,7 @@ const HomeView = () => {
   return (
     <main>
       <SearchBar addSearchTerm={addSearchTerm} />
-      <PokemonContainer />
+      <PokemonContainer searchTerm={searchTerm} />
     </main>
   );
 }
