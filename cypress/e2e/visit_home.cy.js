@@ -1,22 +1,23 @@
 describe('Visit Home Page', () => {
-  beforeEach('ntercept and visit homepage', () => {
+  beforeEach('intercept and visit homepage', () => {
     cy.loadPage();
   })
 
   it('should have a header with a title, subtitle, pokeball logo, and Home button', () => {
     cy.get('header')
-      .get('.title-logo')
+      .find('.title-logo')
       .should('have.attr', 'src', '/static/media/title-logo.4eb791ae459a4d4e9f0f.png')
       .should('have.attr', 'alt', 'pixeldex title logo')
       .should('be.visible');
       
-    cy.get('header')
+      cy.get('header')
       .contains('p', 'Unleash the pixels, catch the nostalgia!');
-    
-    cy.get('header')
-      .get('.pokeball-logo')
+      
+      cy.get('header')
+      .find('.pokeball-logo')
       .should('have.attr', 'src', '/static/media/pokeball-logo.178c73ab034c28222c35.png')
-      .should('have.attr', 'alt', 'pixelated pokeball logo');
+      .should('have.attr', 'alt', 'pixelated pokeball logo')
+      .should('be.visible');
       
     cy.get('header')
     .contains('button', 'HOME');
@@ -33,12 +34,40 @@ describe('Visit Home Page', () => {
       .contains('SEARCH');
   });
 
-  it('should have 20 pokemon components with numbers, names, and images', () => {
+  it('should have 20 pokemon components', () => {
     cy.get('.pokemon-container')
       .children().should('have.length', 20)
 
-    cy.get('.pokemon-container')
-      .children().first()
-      .contains('a').should('have.attr', 'href', '/bulbasaur')
+    cy.get('.pokemon-container').children().first()
+      .contains('a')
+      .should('have.attr', 'href', '/bulbasaur')
+      .find('img')
+      .should('have.attr', 'src', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png')
+      .should('be.visible')
+      .siblings('figcaption')
+      .contains('p', '1 | bulbasaur')
+      
+      cy.get('.pokemon-container').children().last()
+      .contains('a')
+      .should('have.attr', 'href', '/raticate')
+      .find('img')
+      .should('have.attr', 'src', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/20.png')
+      .should('be.visible')
+      .siblings('figcaption')
+      .contains('p', '20 | raticate')
+  });
+});
+
+describe('Visit Homepage with Failed Network Request', () => {
+  beforeEach('intercept with failed request', () => {
+    cy.loadSadPage();
+  });
+
+  it('Show an error when there is a bad network response', () => {
+    cy.get('.error-message')
+      .contains('h1', 'Wild ERROR Appeared!');
+
+    cy.get('.error-message')
+      .contains('p', 'Try again or come back later.');
   });
 });
