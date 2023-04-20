@@ -1,5 +1,5 @@
 const fetchPokemon = (selectedPokemon) => {
-  const allPokemon = 'https://pokeapi.co/api/v2/pokemon/?limit=2000';
+  const allPokemon = 'https://pokeapi.co/api/v2/pokemon/?limit=1008';
   let url = selectedPokemon ? selectedPokemon : allPokemon
 
   return fetch(url)
