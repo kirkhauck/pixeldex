@@ -8,16 +8,27 @@ describe('Visit Home Page', () => {
       .get('.title-logo')
       .should('have.attr', 'src', '/static/media/title-logo.4eb791ae459a4d4e9f0f.png')
       .should('have.attr', 'alt', 'pixeldex title logo')
-      .should('be.visible')
+      .should('be.visible');
       
-    cy.get('header').contains('p', 'Unleash the pixels, catch the nostalgia!')
+    cy.get('header')
+      .contains('p', 'Unleash the pixels, catch the nostalgia!');
     
     cy.get('header')
       .get('.pokeball-logo')
       .should('have.attr', 'src', '/static/media/pokeball-logo.178c73ab034c28222c35.png')
-      .should('have.attr', 'alt', 'pixelated pokeball logo')
+      .should('have.attr', 'alt', 'pixelated pokeball logo');
       
     cy.get('header')
     .contains('button', 'HOME');
+  });
+
+  it('should have a from with a text input and search button', () => {
+    cy.get('form')
+      .get('input')
+      .should('have.attr', 'type', 'text');
+
+    cy.get('form')
+      .get('button')
+      .contains('SEARCH');
   });
 });
