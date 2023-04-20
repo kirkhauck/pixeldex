@@ -9,23 +9,21 @@ import { frontSprites } from '../../assets/mock-sprites';
 const PokemonContainer = () => {
   const [pokeList, setPokeList] = useState([]);
   const [pokemonComponents, setPokemonComponents] = useState([])
-  const [nextUrl, setNextUrl] = useState('');
 
   useEffect(() => {
     fetchPokemon()
     .then(data => {
       setPokeList([...data.results]);
-      setNextUrl(data.next);
       return data.results;
     })
     .then(newPokemon => {
-      const newPokemonComponents = newPokemon.map((pokemon, i) => {
+      const selectedPokemonComponents = newPokemon.map((pokemon, i) => {
         return (
           <Pokemon dexNum={i + 1} name={pokemon.name} />
         )
       });
 
-      setPokemonComponents(newPokemonComponents)
+      setPokemonComponents(selectedPokemonComponents)
     });
   }, []);
 
