@@ -19,7 +19,7 @@ const PokemonContainer = () => {
     .then(newPokemon => {
       const selectedPokemonComponents = newPokemon.map((pokemon, i) => {
         return (
-          <Pokemon dexNum={i + 1} name={pokemon.name} />
+          <Pokemon key={i} dexNum={i + 1} name={pokemon.name} />
         )
       });
 
