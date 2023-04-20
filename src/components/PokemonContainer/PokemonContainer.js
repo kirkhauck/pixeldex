@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './PokemonContainer.css';
 import fetchPokemon from '../../utils/apiCalls';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import Pokemon from '../Pokemon/Pokemon';
 
 // Temp placeholders for styling
@@ -9,11 +10,16 @@ import { frontSprites } from '../../assets/mock-sprites';
 const PokemonContainer = () => {
   const [pokeList, setPokeList] = useState([]);
   const [pokemon, setPokemon] = useState([])
+  const [error, setError] = useState('')
 
   useEffect(() => {
+    setError('');
     fetchPokemon()
     .then(data => {
       setPokeList([...data.results]);
+    })
+    .catch(error => {
+      setError(error);
     })
   }, []);
 
@@ -28,9 +34,12 @@ const PokemonContainer = () => {
   }, [pokeList]);
 
   return (
-    <section className='pokemon-container'>
-      {pokemon}
-    </section>
+    error ? <ErrorMessage /> :
+    (
+      <section className='pokemon-container'>
+        {pokemon}
+      </section>
+    )
   );
 }
 
