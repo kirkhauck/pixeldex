@@ -1,5 +1,5 @@
 describe('Visit Home Page', () => {
-  beforeEach('intercept and visit homepage', () => {
+  beforeEach('intercept and stub homepage', () => {
     cy.loadPage();
   })
 
