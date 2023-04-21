@@ -22,6 +22,40 @@ describe('Search Bar', () => {
       .get('input').type('Bulbasaur');
 
     cy.get('form')
-      .children('p').should('not.exist');
+      .children('p')
+      .should('not.exist');
+  });
+
+  it('should show the matching Pokemon if it\'s name is searched with any capitalization', () => {
+    cy.get('input').type('BuLbAsAuR')
+      .get('.search-button').click();
+    
+    cy.get('.pokemon-container')
+      .contains('a')
+      .should('have.attr', 'href', '/bulbasaur')
+      .find('img')
+      .should('have.attr', 'src', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png')
+      .should('be.visible')
+      .siblings('figcaption')
+      .contains('p', '1 | bulbasaur')
+  });
+
+  it('should show a message if there are now matches', () => {
+    cy.get('input').type('potato')
+      .get('.search-button').click();
+
+    cy.get('main')
+      .contains('.no-match', 'POTATO fled! No Pokemon matched your search.');
+    });
+    
+    it('should have the message disappear following a successful search', () => {
+      cy.get('input').type('potato')
+        .get('.search-button').click()
+        .get('input').clear().type('Bulbasaur')
+        .get('.search-button').click();
+      
+      cy.get('main')
+        .children('.no-match')
+        .should('not.exist');
   });
 });
