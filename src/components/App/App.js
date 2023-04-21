@@ -13,7 +13,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<HomeView/>} />
         {/* replace bublasaur with dynamic route once API data is used to render pokemon */}
-        <Route path='/bulbasaur' element={<SpriteView/>} />
+        <Route path='/:pokemon' element={<SpriteView/>} />
         <Route path='*' element={<ErrorMessage/>} />
       </Routes>
     </>
