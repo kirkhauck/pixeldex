@@ -7,7 +7,7 @@ const Pokemon = ({ dexNum, name }) => {
 
   return (
     <figure>
-      <Link to='/bulbasaur' className='pokemon-link'>
+      <Link to={`/${name}`} className='pokemon-link'>
         <img src={spriteSrc} />
         <figcaption>
           <p>{`${dexNum} | ${name}`}</p>

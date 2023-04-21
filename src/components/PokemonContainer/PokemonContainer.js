@@ -55,7 +55,7 @@ const PokemonContainer = ({ searchTerm }) => {
 
       setPokemon(pokemon);
     } else if (foundPokemon === null) {
-      setNoMatchMessage(`${searchTerm.toUpperCase()} fled! (No Pokemon matched your search.)`)
+      setNoMatchMessage(`${searchTerm.toUpperCase()} fled! No Pokemon matched your search.`)
     }
   }, [searchTerm]);
 
@@ -63,7 +63,7 @@ const PokemonContainer = ({ searchTerm }) => {
     error ? <ErrorMessage /> :
     (
       <>
-        {noMatchMessage !== '' && <p>{noMatchMessage}</p>}
+        {noMatchMessage !== '' && <p className='no-match'>{noMatchMessage}</p>}
         <section className='pokemon-container'>
           {pokemon}
         </section>
