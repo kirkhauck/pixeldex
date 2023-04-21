@@ -3,10 +3,12 @@ import './SpritesContainer.css';
 import fetchPokemon from '../../utils/apiCalls';
 import { extractUrls } from '../../utils/helpers';
 import Sprite from '../Sprite/Sprite';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 const SpritesContainer = ({ pokemonName }) => {
   const [pokemon, setPokemon] = useState({});
   const [sprites, setSprites] = useState([]);
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`
@@ -14,7 +16,8 @@ const SpritesContainer = ({ pokemonName }) => {
     .then(data => {
       setPokemon(data.sprites);
     })
-  }, [])
+    .catch(error => setErrorMessage(error));
+  }, []);
 
   useEffect(() => {
     if (Object.keys(pokemon).length) {
@@ -27,9 +30,12 @@ const SpritesContainer = ({ pokemonName }) => {
   }, [pokemon]);
 
   return (
-    <section className='sprites-container'>
-      {sprites}
-    </section>
+    errorMessage ? <ErrorMessage /> :
+    (
+      <section className='sprites-container'>
+        {sprites}
+      </section>
+    )
   );
 }
 
