@@ -4,9 +4,6 @@ import fetchPokemon from '../../utils/apiCalls';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import Pokemon from '../Pokemon/Pokemon';
 
-// Temp placeholders for styling
-import { frontSprites } from '../../assets/mock-sprites';
-
 const PokemonContainer = ({ searchTerm }) => {
   const [pokeList, setPokeList] = useState([]);
   const [pokemon, setPokemon] = useState([])
