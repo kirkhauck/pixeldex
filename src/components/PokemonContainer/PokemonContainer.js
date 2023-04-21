@@ -62,7 +62,10 @@ const PokemonContainer = ({ searchTerm }) => {
       <>
         {noMatchMessage !== '' && <p className='no-match'>{noMatchMessage}</p>}
         <section className='pokemon-container'>
-          {pokemon}
+          <h2>Click a Pokemon to view its pixel art!</h2>
+          <div>
+            {pokemon}
+          </div>
         </section>
       </>
     )
