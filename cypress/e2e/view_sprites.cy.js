@@ -57,4 +57,42 @@ describe('Visit Sprite Page', () => {
     cy.get('.pokemon-container > div')
       .children().should('have.length', 20);
   });
+
+  it('Should have the Pokemon\'s name and all its sprites', () => {
+    cy.visitBulbasaur();
+    
+    cy.get('h1')
+      .contains('BULBASAUR');
+
+    cy.get('.sprites-container')
+      .children().should('have.length', 72);
+
+    cy.get('.sprites-container')
+      .children().first()
+      .should('have.attr', 'src', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png');
+
+    cy.get('.sprites-container')
+      .children().last()
+      .should('have.attr', 'src', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-viii/icons/1.png');
+    });
+
+  it('Should have the other Pokemon\'s name and all its sprites', () => {
+    cy.visitCharmander();
+    
+    cy.get('h1')
+      .contains('CHARMANDER');
+
+    cy.get('.sprites-container')
+      .children().should('have.length', 72);
+
+    cy.get('.sprites-container')
+      .children().first()
+      .should('have.attr', 'src', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/4.png')
+      .should('be.visible');
+      
+      cy.get('.sprites-container')
+      .children().last()
+      .should('have.attr', 'src', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-viii/icons/4.png')
+      .should('be.visible');
+    });
 });
