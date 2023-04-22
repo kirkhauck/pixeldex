@@ -8,7 +8,6 @@ const SpriteView = () => {
 
   return (
     <main>
-      <h1>{pokemonName.toUpperCase()}</h1>
       <SpritesContainer pokemonName={pokemonName} />
     </main>
   );
