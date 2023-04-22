@@ -11,3 +11,11 @@ Cypress.Commands.add('visitSadHome', () => {
   })
   .visit('http://localhost:3000/')
 });
+
+Cypress.Commands.add('visitBulbasaur', () => {
+  cy.get('.pokemon-container > div > :nth-child(1)').click();
+});
+
+Cypress.Commands.add('visitCharmander', () => {
+  cy.get('.pokemon-container > div > :nth-child(4)').click();
+});
