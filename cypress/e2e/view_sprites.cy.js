@@ -5,7 +5,18 @@ describe('Visit Sprite Page', () => {
 
   it('Should visit a Pokemon\'s sprite page when it is clicked', () => {
     cy.get('.pokemon-container > div > :nth-child(1)').click()
-      .url().should('eq', 'http://localhost:3000/bulbasaur')
+    .url().should('eq', 'http://localhost:3000/bulbasaur')
+  });
+  
+  it('Should be able to navigate between the home page and sprite page with browser history', () => {
+    cy.get('.pokemon-container > div > :nth-child(1)').click()
+    .url().should('eq', 'http://localhost:3000/bulbasaur');
+    
+    cy.go('back')
+    .url().should('eq', 'http://localhost:3000/');
+    
+    cy.go('forward')
+    .url().should('eq', 'http://localhost:3000/bulbasaur');
   });
 
   it('Should have a header with a title, subtitle, pokeball logo, and Home button', () => {
