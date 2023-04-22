@@ -13,9 +13,15 @@ Cypress.Commands.add('visitSadHome', () => {
 });
 
 Cypress.Commands.add('visitBulbasaur', () => {
+  cy.intercept('https://pokeapi.co/api/v2/pokemon/bulbasaur', {
+    fixture: 'bulbasaur_sample'
+  })
   cy.get('.pokemon-container > div > :nth-child(1)').click();
 });
 
 Cypress.Commands.add('visitCharmander', () => {
-  cy.get('.pokemon-container > div > :nth-child(4)').click();
+  cy.intercept('https://pokeapi.co/api/v2/pokemon/bulbasaur', {
+    fixture: 'charmander_sample'
+  })
+  .get('.pokemon-container > div > :nth-child(4)').click();
 });
