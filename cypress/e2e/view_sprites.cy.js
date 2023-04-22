@@ -109,3 +109,14 @@ describe('Visit Sad Sprite Page', () => {
       .siblings('p', 'Try again or come back later.');
   });
 });
+
+describe('Visit Bad Pokemon URL', () => {
+  beforeEach('visit bad Pokemon URL', () => {
+    cy.visitHome();
+    cy.visit('http://localhost:3000/potato')
+  });
+
+  it('Should show an error message if the user enters a bad URL end path', () => {
+    
+  });
+});
