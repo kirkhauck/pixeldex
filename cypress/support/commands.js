@@ -20,7 +20,7 @@ Cypress.Commands.add('visitBulbasaur', () => {
 });
 
 Cypress.Commands.add('visitCharmander', () => {
-  cy.intercept('https://pokeapi.co/api/v2/pokemon/bulbasaur', {
+  cy.intercept('https://pokeapi.co/api/v2/pokemon/charmander', {
     fixture: 'charmander_sample'
   })
   .get('.pokemon-container > div > :nth-child(4)').click();
