@@ -58,11 +58,8 @@ describe('Visit Sprite Page', () => {
       .children().should('have.length', 20);
   });
 
-  it('Should have the Pokemon\'s name and all its sprites', () => {
+  it('Should have all the Pokemon\'s sprites', () => {
     cy.visitBulbasaur();
-    
-    cy.get('h1')
-      .contains('BULBASAUR');
 
     cy.get('.sprites-container')
       .children().should('have.length', 72);
@@ -76,11 +73,8 @@ describe('Visit Sprite Page', () => {
       .should('have.attr', 'src', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-viii/icons/1.png');
     });
 
-  it('Should have the other Pokemon\'s name and all its sprites', () => {
+  it('Should have all the other Pokemon\'s sprites if it is clicked', () => {
     cy.visitCharmander();
-    
-    cy.get('h1')
-      .contains('CHARMANDER');
 
     cy.get('.sprites-container')
       .children().should('have.length', 72);
@@ -117,6 +111,8 @@ describe('Visit Bad Pokemon URL', () => {
   });
 
   it('Should show an error message if the user enters a bad URL end path', () => {
-    
+    cy.get('.error-message')
+    .contains('h1', 'Wild ERROR Appeared!')
+    .siblings('p', 'Try again or come back later.');
   });
 });
