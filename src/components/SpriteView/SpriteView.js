@@ -1,12 +1,15 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import './SpriteView.css';
 import SpritesContainer from '../SpritesContainer/SpritesContainer';
 
 const SpriteView = () => {
+  const { pokemonName } = useParams();
+
   return (
     <main>
-      <h1>Pokemon</h1>
-      <SpritesContainer />
+      <h1>{pokemonName.toUpperCase()}</h1>
+      <SpritesContainer pokemonName={pokemonName} />
     </main>
   );
 }

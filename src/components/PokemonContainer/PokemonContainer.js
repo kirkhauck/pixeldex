@@ -4,9 +4,6 @@ import fetchPokemon from '../../utils/apiCalls';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import Pokemon from '../Pokemon/Pokemon';
 
-// Temp placeholders for styling
-import { frontSprites } from '../../assets/mock-sprites';
-
 const PokemonContainer = ({ searchTerm }) => {
   const [pokeList, setPokeList] = useState([]);
   const [pokemon, setPokemon] = useState([])
@@ -65,7 +62,10 @@ const PokemonContainer = ({ searchTerm }) => {
       <>
         {noMatchMessage !== '' && <p className='no-match'>{noMatchMessage}</p>}
         <section className='pokemon-container'>
-          {pokemon}
+          <h2>Click a Pokemon to view its pixel art!</h2>
+          <div>
+            {pokemon}
+          </div>
         </section>
       </>
     )
