@@ -96,3 +96,16 @@ describe('Visit Sprite Page', () => {
       .should('be.visible');
     });
 });
+
+describe('Visit Sad Sprite Page', () => {
+  beforeEach('intercept bulbasaur and responsd with 404', () => {
+    cy.visitHome();
+    cy.visitSadBulbasaur();
+  });
+
+  it('Should tell the user if it failed to fetch the Pokemon\'s sprites', () => {
+    cy.get('.error-message')
+      .contains('h1', 'Wild ERROR Appeared!')
+      .siblings('p', 'Try again or come back later.');
+  });
+});
