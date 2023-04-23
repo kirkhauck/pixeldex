@@ -49,10 +49,7 @@ const SpritesContainer = ({ pokemonName }) => {
     errorMessage ? <ErrorMessage /> :
     (
       <section className='sprites-container'>
-        <h1>{pokemonName.toUpperCase()}</h1>
-        <div className='sprites-center'>
-          {sprites}
-        </div>
+        {sprites}
       </section>
     )
   );
