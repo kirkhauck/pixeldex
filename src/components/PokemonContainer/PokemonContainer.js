@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import './PokemonContainer.css';
-import fetchPokemon from '../../utils/apiCalls';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import Pokemon from '../Pokemon/Pokemon';
+import fetchPokemon from '../../utils/apiCalls';
 
 const PokemonContainer = ({ searchTerm }) => {
   const [pokeList, setPokeList] = useState([]);

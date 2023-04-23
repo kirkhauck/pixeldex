@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import './SpritesContainer.css';
-import fetchPokemon from '../../utils/apiCalls';
-import Sprite from '../Sprite/Sprite';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import Sprite from '../Sprite/Sprite';
+import fetchPokemon from '../../utils/apiCalls';
 
 const SpritesContainer = ({ pokemonName }) => {
   const [pokemon, setPokemon] = useState({});

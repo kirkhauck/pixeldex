@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './HomeView.css';
-import SearchBar from '../SearchBar/SearchBar';
 import PokemonContainer from '../PokemonContainer/PokemonContainer';
+import SearchBar from '../SearchBar/SearchBar';
 
 const HomeView = () => {
   const [searchTerm, setSearchTerm] = useState('')
