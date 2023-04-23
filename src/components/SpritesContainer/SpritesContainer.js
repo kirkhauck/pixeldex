@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import './SpritesContainer.css';
 import fetchPokemon from '../../utils/apiCalls';
-import { extractUrls } from '../../utils/helpers';
 import Sprite from '../Sprite/Sprite';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
@@ -29,6 +28,22 @@ const SpritesContainer = ({ pokemonName }) => {
       setSprites(spriteComponents);
     }
   }, [pokemon]);
+
+  const extractUrls = (obj) => {
+    let urls = [];
+  
+    for (const key in obj) {
+      if (key !== 'other' && typeof obj[key] === 'string') {
+        urls.push(obj[key]);
+      }
+      
+      if (key !== 'other' && typeof obj[key] === 'object') {
+        urls = [...urls, ...extractUrls(obj[key])];
+      }
+    }
+  
+    return urls;
+  }
 
   return (
     errorMessage ? <ErrorMessage /> :
