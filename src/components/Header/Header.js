@@ -9,8 +9,10 @@ const Header = () => {
     <header>
       <div className='logo-container'>
         <div className='title-container'>
-          <img className='title-logo' src={titleLogo} alt='pixeldex title logo' />
-          <p className='subtitle'>Unleash the pixels, catch the nostalgia!</p>
+          <Link to='/' className='home-button-link'>
+            <img className='title-logo' src={titleLogo} alt='pixeldex title logo' />
+          </Link>
+          <p className='subtitle'>Catch 'em all! One pixel at a time.</p>
         </div>
         <img className='pokeball-logo' src={pokeballLogo} alt='pixelated pokeball logo' />
       </div>
