@@ -24,6 +24,6 @@ export const formatDexNum = (num) => {
   } else if (strNum.length === 3) {
     return `#0${strNum}`
   } else {
-    return `#{strNum}`
+    return `#${strNum}`
   }
 }
