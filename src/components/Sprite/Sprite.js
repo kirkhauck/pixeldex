@@ -2,14 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Sprite.css';
 
-const Sprite = ({ sprite }) => {
+const Sprite = ({ id, sprite, pokemonName,  }) => {
   return (
-      <img className='sprite' src={sprite} />
+      <img className='sprite' src={sprite} alt={`${pokemonName} sprite ${id}`} />
   );
 }
 
 export default Sprite;
 
 Sprite.propTypes = {
-  sprite: PropTypes.string.isRequired
+  id: PropTypes.number.isRequired,
+  sprite: PropTypes.string.isRequired,
+  pokemonName: PropTypes.string.isRequired
 }

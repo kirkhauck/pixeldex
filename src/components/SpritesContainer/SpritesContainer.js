@@ -23,7 +23,7 @@ const SpritesContainer = ({ pokemonName }) => {
     if (Object.keys(pokemon).length) {
       const urls = extractUrls(pokemon);
       const spriteComponents = urls.map((url, i) => {
-        return <Sprite key={i} sprite={url} />
+        return <Sprite key={i} id={i} sprite={url} pokemonName={pokemonName} />
       });
       setSprites(spriteComponents);
     }
