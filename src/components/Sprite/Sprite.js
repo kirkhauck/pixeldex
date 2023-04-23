@@ -3,7 +3,7 @@ import './Sprite.css';
 
 const Sprite = ({ sprite }) => {
   return (
-      <img src={sprite} />
+      <img className='sprite' src={sprite} />
   );
 }
 
