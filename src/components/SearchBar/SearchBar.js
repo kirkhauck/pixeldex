@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import './SearchBar.css';
 
 const SearchBar = ({ addSearchTerm }) => {
@@ -44,3 +45,7 @@ const SearchBar = ({ addSearchTerm }) => {
 }
 
 export default SearchBar;
+
+SearchBar.propTypes = {
+  addSearchTerm: PropTypes.func
+}
