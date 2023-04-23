@@ -1,11 +1,25 @@
 .sprites-container {
   width: 90%;
   margin: 2%;
-  margin-top: 0;
+  margin-top: 5%;
   padding: 5%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  flex-wrap: wrap;
   border-radius: 10px;
   background-color: #F2F2F2;
+}
+
+h1 {
+  z-index: 1000;
+  margin: 3% auto 20px;
+  padding: 2px 10% 0;
+  border-bottom: 3px solid #dbdbdb;
+  font-size: 24px;
+}
+
+.sprites-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }

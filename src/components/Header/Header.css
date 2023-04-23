@@ -35,7 +35,7 @@ header {
 }
 
 .subtitle {
-  align-self: flex-end;
+  text-align: left;
   margin-left: 1.4rem;
   margin-bottom: 1rem;
   font-size: 0.8em;

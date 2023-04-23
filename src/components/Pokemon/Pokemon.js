@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Pokemon.css';
+import { formatDexNum } from '../../utils/helpers';
 
 const Pokemon = ({ dexNum, name }) => {
   const spriteSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${dexNum}.png`
@@ -10,7 +11,7 @@ const Pokemon = ({ dexNum, name }) => {
       <Link to={`/${name}`} className='pokemon-link'>
         <img src={spriteSrc} />
         <figcaption>
-          <p>{`${dexNum} | ${name}`}</p>
+          <p>{`${formatDexNum(dexNum)} | ${name.toUpperCase()}`}</p>
         </figcaption>
       </Link>
     </figure>
