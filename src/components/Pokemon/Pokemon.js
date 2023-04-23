@@ -23,7 +23,7 @@ const Pokemon = ({ dexNum, name }) => {
   return (
     <figure>
       <Link to={`/${name}`} className='pokemon-link'>
-        <img src={spriteSrc} />
+        <img src={spriteSrc} alt={`${name}`}/>
         <figcaption>
           <p>{`${formatDexNum(dexNum)} | ${name.toUpperCase()}`}</p>
         </figcaption>
