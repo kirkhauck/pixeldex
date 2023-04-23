@@ -11,7 +11,7 @@ const SpritesContainer = ({ pokemonName }) => {
   const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
-    const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`
+    const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
     fetchPokemon(url)
     .then(data => {
       setPokemon(data.sprites);

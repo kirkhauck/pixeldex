@@ -4,19 +4,19 @@ import PropTypes from 'prop-types';
 import './Pokemon.css';
 
 const Pokemon = ({ dexNum, name }) => {
-  const spriteSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${dexNum}.png`
+  const spriteSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${dexNum}.png`;
 
   const formatDexNum = (num) => {
     const strNum = num.toString();
   
     if (strNum.length === 1) {
-      return `#000${strNum}`
+      return `#000${strNum}`;
     } else if (strNum.length === 2) {
-      return `#00${strNum}`
+      return `#00${strNum}`;
     } else if (strNum.length === 3) {
-      return `#0${strNum}`
+      return `#0${strNum}`;
     } else {
-      return `#${strNum}`
+      return `#${strNum}`;
     }
   }
 

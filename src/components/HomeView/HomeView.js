@@ -4,10 +4,10 @@ import PokemonContainer from '../PokemonContainer/PokemonContainer';
 import SearchBar from '../SearchBar/SearchBar';
 
 const HomeView = () => {
-  const [searchTerm, setSearchTerm] = useState('')
+  const [searchTerm, setSearchTerm] = useState('');
 
   const addSearchTerm = term => {
-    setSearchTerm(term)
+    setSearchTerm(term);
   }
 
   return (
