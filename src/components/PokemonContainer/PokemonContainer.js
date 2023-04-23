@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import './PokemonContainer.css';
 import fetchPokemon from '../../utils/apiCalls';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
@@ -73,3 +74,7 @@ const PokemonContainer = ({ searchTerm }) => {
 }
 
 export default PokemonContainer;
+
+PokemonContainer.propTypes = {
+  searchTerm: PropTypes.string
+}
