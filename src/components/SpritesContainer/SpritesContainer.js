@@ -61,5 +61,5 @@ const SpritesContainer = ({ pokemonName }) => {
 export default SpritesContainer;
 
 SpritesContainer.propTypes = {
-  pokemonName: PropTypes.string
+  pokemonName: PropTypes.string.isRequired
 }

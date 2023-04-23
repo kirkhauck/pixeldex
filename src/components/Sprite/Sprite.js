@@ -11,5 +11,5 @@ const Sprite = ({ sprite }) => {
 export default Sprite;
 
 Sprite.propTypes = {
-  sprite: PropTypes.string
+  sprite: PropTypes.string.isRequired
 }

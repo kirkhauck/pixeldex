@@ -47,5 +47,5 @@ const SearchBar = ({ addSearchTerm }) => {
 export default SearchBar;
 
 SearchBar.propTypes = {
-  addSearchTerm: PropTypes.func
+  addSearchTerm: PropTypes.func.isRequired
 }

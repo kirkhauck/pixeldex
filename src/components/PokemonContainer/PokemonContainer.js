@@ -76,5 +76,5 @@ const PokemonContainer = ({ searchTerm }) => {
 export default PokemonContainer;
 
 PokemonContainer.propTypes = {
-  searchTerm: PropTypes.string
+  searchTerm: PropTypes.string.isRequired
 }
