@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Sprite.css';
 
 const Sprite = ({ sprite }) => {
@@ -8,3 +9,7 @@ const Sprite = ({ sprite }) => {
 }
 
 export default Sprite;
+
+Sprite.propTypes = {
+  sprite: PropTypes.string.isRequired
+}
