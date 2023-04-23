@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import './SpritesContainer.css';
 import fetchPokemon from '../../utils/apiCalls';
 import { extractUrls } from '../../utils/helpers';
@@ -43,3 +44,7 @@ const SpritesContainer = ({ pokemonName }) => {
 }
 
 export default SpritesContainer;
+
+SpritesContainer.propTypes = {
+  pokemonName: PropTypes.string
+}
