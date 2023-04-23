@@ -63,12 +63,12 @@ describe('Visit Home Page', () => {
   });
 });
 
-describe('Visit Homepage with Failed Network Request', () => {
+describe('Visit Homepage with Failed Network Response', () => {
   beforeEach('intercept with failed request', () => {
     cy.visitSadHome();
   });
 
-  it('Show an error when there is a bad network response', () => {
+  it('should show an error when there is a bad network response', () => {
     cy.get('.error-message')
       .contains('h1', 'Wild ERROR Appeared!');
 
