@@ -4,7 +4,7 @@ import './SearchBar.css';
 
 const SearchBar = ({ addSearchTerm }) => {
   const [pokemonName, setPokemonName] = useState('');
-  const [requiredMessage, setRequiredMessage] = useState('')
+  const [requiredMessage, setRequiredMessage] = useState('');
 
   const handleClick = event => {
     event.preventDefault();

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import './SpritesContainer.css';
-import fetchPokemon from '../../utils/apiCalls';
-import Sprite from '../Sprite/Sprite';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import Sprite from '../Sprite/Sprite';
+import fetchPokemon from '../../utils/apiCalls';
 
 const SpritesContainer = ({ pokemonName }) => {
   const [pokemon, setPokemon] = useState({});
@@ -11,7 +11,7 @@ const SpritesContainer = ({ pokemonName }) => {
   const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
-    const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`
+    const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
     fetchPokemon(url)
     .then(data => {
       setPokemon(data.sprites);
@@ -49,10 +49,7 @@ const SpritesContainer = ({ pokemonName }) => {
     errorMessage ? <ErrorMessage /> :
     (
       <section className='sprites-container'>
-        <h1>{pokemonName.toUpperCase()}</h1>
-        <div className='sprites-center'>
-          {sprites}
-        </div>
+        {sprites}
       </section>
     )
   );

@@ -1,8 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
-import pokeballLogo from '../../assets/pokeball-logo.png'
-import titleLogo from '../../assets/title-logo.png'
-import { Link } from 'react-router-dom'
+import pokeballLogo from '../../assets/pokeball-logo.png';
+import titleLogo from '../../assets/title-logo.png';
 
 const Header = () => {
   return (
@@ -21,6 +21,6 @@ const Header = () => {
       </Link>
     </header>
   );
-};
+}
 
 export default Header;

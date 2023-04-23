@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import './PokemonContainer.css';
-import fetchPokemon from '../../utils/apiCalls';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import Pokemon from '../Pokemon/Pokemon';
+import fetchPokemon from '../../utils/apiCalls';
 
 const PokemonContainer = ({ searchTerm }) => {
   const [pokeList, setPokeList] = useState([]);
-  const [pokemon, setPokemon] = useState([])
-  const [noMatchMessage, setNoMatchMessage] = useState('')
-  const [error, setError] = useState('')
+  const [pokemon, setPokemon] = useState([]);
+  const [noMatchMessage, setNoMatchMessage] = useState('');
+  const [error, setError] = useState('');
 
   useEffect(() => {
     setError('');
@@ -19,14 +19,14 @@ const PokemonContainer = ({ searchTerm }) => {
     })
     .catch(error => {
       setError(error);
-    })
+    });
   }, []);
 
   useEffect(() => {
     const pokemon = pokeList.length > 0 && pokeList.map((pokemon, i) => {
       return (
         <Pokemon key={i} dexNum={i + 1} name={pokemon.name} />
-      )
+      );
     });
 
     setPokemon(pokemon);
@@ -36,7 +36,7 @@ const PokemonContainer = ({ searchTerm }) => {
     let foundPokemon;
     let pokemonIndex;
 
-    setNoMatchMessage('')
+    setNoMatchMessage('');
     if (searchTerm !== '') {
       [foundPokemon, pokemonIndex] = pokeList.reduce((acc, pokemon, i) => {
         if (pokemon.name === searchTerm.toLowerCase()) {
