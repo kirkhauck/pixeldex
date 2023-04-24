@@ -40,7 +40,7 @@ This project was completed as part of Turing School of Software Design's front e
 
 ## Deployed Page
 
-Visit [PixelDex]()
+Visit [PixelDex](https://pixeldex.vercel.app/)
 
 ## Wins and Challenges
 
