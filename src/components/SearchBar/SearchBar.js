@@ -28,6 +28,7 @@ const SearchBar = ({ addSearchTerm }) => {
           name='pokemonName'
           value={pokemonName}
           placeholder='Search by name'
+          aria-label='search'
           aria-required="true"
           onChange={handleChange}
           />
