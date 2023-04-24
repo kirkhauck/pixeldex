@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# PixelDex
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
+  - [Introduction](#Introduction)
+  - [Technologies](#Technologies)
+  - [Contributors](#Contributors)
+  - [Illustrations](#Illustrations)
+  - [Deployed Page](#Deployed-Page)
+  - [Wins](#Wins)
+  - [Challenges & Improvements](#Challenges-&-Improvements)
+  - [Set Up](#Set-Up)
+  - [Sources](#Sources)
+  - [Project Spec](#Project-Spec)
 
-## Available Scripts
+## Introduction
+Welcome to the world of PixelDex!
 
-In the project directory, you can run:
+PixelDex is an app aimed at lovers of Pokemon and their sprite art, hosted by [PokeAPI](https://pokeapi.co/). Upon visiting the main page, the user can click any Pokemon, or look one up by its name. They will then be directed to a page that shows all of that Pokemon's sprites from across the different generations, plain and simple.
 
-### `npm start`
+This project was completed as part of Turing School of Software Design's front end curriculum. We were challenged with proposing a project and its MVP, which we were expected to complete within five days. It pushed us to gauge our abilities, what we've learned, and how realistic our expectations could be. It required commitment to a plan and the ability to be judicious and flexible while executing the project. It was the culmination of all we learned in Mod 3, applied in a fast-paced, agile environment.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies
+  - React
+  - Router
+  - PropTypes
+  - Cypress
+  - Agile methodology
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Contributor
+[Kirk Hauck](https://github.com/kirkhauck)
 
-### `npm test`
+## Demo GIFs
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Desktop View
+![Desktop View](src/assets/desktop.gif)
 
-### `npm run build`
+### Mobile View
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Mobile View](src/assets/mobile.gif)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Deployed Page
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Visit [PixelDex](https://pixeldex.vercel.app/)
 
-### `npm run eject`
+## Wins and Challenges
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Challenge
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Extracting the Pokemon URL links from the objects returned by the API, which were deeply nested and in different layers of depth.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Win
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Created a recursive function in `SpritesContainer.js` to take in the Pokemon object and utilize a `for in` loop to extract the property values that were strings and dig deeper into property values that were objects. Due to the nature of the `sprites` property in the object, this was a viable approach because all the property values that were strings were urls.
 
-## Learn More
+### Challenge
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Displaying all the Pokemon on the main page without making 1,008 fetch requests.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Win
 
-### Code Splitting
+When fetching Pokemon from the API, you could make a fetch request to `/pokemon/:pokemon` (replacing `:pokemon` with the Pokemon's name or Pokedex Number), and receive the full Pokemon object. You could also fetch just to `/pokemon` and receive an array of Pokemon objects (with a query-controlled page limit). However, the objects in the array did not contain all the Pokemon's information, just the name and a link to the full Pokemon object. In order to render sprites, a single fetch request was made to return an array of all the Pokemon objects, and the `name` property values were interpolated into a url to link to each Pokemon's default, front-facing sprite.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Set Up
 
-### Analyzing the Bundle Size
+1. Fork this repo  
+2. Clone the repo to your local machine   
+3. Run `npm i`, then ` npm run build`, then `npm start`
+4. View the project in the browser by opening localhost:3000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Sources
+  - [PokeAPI](https://pokeapi.co/)
+  - [MDN](http://developer.mozilla.org/en-US/)
+  - [React Docs](https://reactjs.org/docs/getting-started.html)
+  - [Cypress Docs](https://docs.cypress.io/guides/overview/why-cypress.html)
