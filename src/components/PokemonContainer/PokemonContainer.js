@@ -55,7 +55,7 @@ const PokemonContainer = ({ searchTerm }) => {
     } else if (foundPokemon === null) {
       setNoMatchMessage(`${searchTerm.toUpperCase()} fled! No Pokemon matched your search.`)
     }
-  }, [searchTerm]);
+  }, [searchTerm, pokeList]);
 
   return (
     error ? <ErrorMessage /> :
