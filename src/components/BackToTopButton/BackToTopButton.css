@@ -1,0 +1,32 @@
+/* Updated CSS for BackToTopButton */
+.back-to-top-button {
+    position: fixed;
+    bottom: 20px; /* Adjust this value as needed for the desired vertical position */
+    right: 15px; /* Adjust this value as needed for the desired horizontal position */
+    background-color: #080b0e; /* Background color of the button */
+    color: #fff; /* Text color */
+    border: none;
+    border-radius: 50%; /* Makes it circular */
+    padding: 10px; /* Adjust the padding as needed */
+    cursor: pointer;
+    display: none; /* Initially hidden */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Set the width and height to make it more circular */
+    height: 40px;
+    z-index: 999; /* Ensures it's on top of other elements */
+  }
+  .back-to-top-button {
+    transition: display 0.2s ease-in-out;
+  }
+  
+  .back-to-top-button.visible {
+    display: block; /* Display the button when it should be visible */
+  }
+  
+  /* Hover effect (optional) */
+  .back-to-top-button:hover {
+    background-color: #34ae29; /* Change the background color on hover */
+  }
+  
